@@ -4,10 +4,37 @@
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  --indigo-500: #6366f1;
+  --blue-500: #3b82f6;
+  --red-500: #ef4444;
+  --green-500: #22c55e;
+  --yellow-500: #eab308;
+  --pink-500: #ec4899;
+  --zinc-500: #71717a;
+  --gray-500: #6b7280;
 }
 
 
 body {
   margin: 0;
   padding: 0;
+}
+
+.theme-blue {
+  background-color: var(--blue-500);
+}
+.theme-red {
+  background-color: var(--red-500);
+}
+.theme-green {
+  background-color: var(--green-500);
+}
+.theme-indigo {
+  background-color: var(--indigo-500);
+}
+.theme-pink {
+  background-color: var(--pink-500);
+}
+.theme-yellow {
+  background-color: var(--yellow-500);
 }

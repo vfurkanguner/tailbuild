@@ -1,13 +1,18 @@
-import { useState } from 'react'
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import ThemeProvider from "./contexts/ThemeContext";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="bg-black">
-      selam
-    </div>
-  )
+    <ThemeProvider>
+      <div className="bg-gray-100">
+        <Sidebar />
+        <Navbar />
+        <main className="pl-64 min-h-screen">selam</main>
+      </div>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
