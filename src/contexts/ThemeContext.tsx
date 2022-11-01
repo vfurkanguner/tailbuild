@@ -8,9 +8,14 @@ type Props = {
 const Context = createContext<ThemeContextType | null>({} as ThemeContextType);
 
 export default function ThemeProvider({ children }: Props) {
-  const [activeColor, setActiveColor] = useState("green");
+  const [activeTheme, setActiveTheme] = useState("light");
+
+
+  const toggleTheme = () => {
+    setActiveTheme(activeTheme === "light" ? "dark" : "light");
+  };
   return (
-    <Context.Provider value={{ activeColor, setActiveColor }}>
+    <Context.Provider value={{ activeTheme, toggleTheme  }}>
       {children}
     </Context.Provider>
   );

@@ -9,13 +9,10 @@ type Props = {};
 export const colors = ["green", "red", "blue", "yellow", "pink", "indigo"];
 
 export default function Navbar({}: Props) {
-  const { activeColor, setActiveColor } = useTheme() as ThemeContextType;
-
-  const onChangeTheme = (color: string) => {
-    setActiveColor(color);
-  };
+  const { activeTheme, toggleTheme } = useTheme() as ThemeContextType;
 
   const onToggleDarkMode = () => {
+    toggleTheme();
     document.body.classList.toggle("dark");
   };
 
@@ -27,15 +24,40 @@ export default function Navbar({}: Props) {
     <div className={`pl-64 w-full p-4 bg-transparent flex  justify-between`}>
       <div className="container mx-auto  px-2 lg:px-8 flex justify-between ">
         <div className="inline-flex bg-white dark:bg-zinc-800  shadow px-2 py-1 rounded-lg">
-          <button type="button" className="px-2 py-1 bg-gray-100 dark:bg-zinc-600 rounded-lg">
-            <SunIcon className="h-6 w-6 text-amber-500" />
+          <button
+            type="button"
+            onClick={onButtonClick}
+            className={
+              activeTheme === "light"
+                ? "px-2 py-1 bg-gray-100 dark:bg-zinc-600 rounded-lg transition-all"
+                : "px-2 py-1"
+            }
+          >
+            <SunIcon
+              className={
+                activeTheme === "light"
+                  ? "h-6 w-6 text-amber-500"
+                  : "text-gray-500 h-6 w-6"
+              }
+            />
           </button>
+
           <button
             onClick={onButtonClick}
             type="button"
-            className="px-2 py-1 opacity-40"
+            className={classNames(
+              activeTheme === "dark"
+                ? "px-2 py-1 bg-gray-100 dark:bg-zinc-600 rounded-lg transition-all"
+                : "px-2 py-1"
+            )}
           >
-            <MoonIcon className="h-6 w-6 text-gray-500" />
+            <MoonIcon
+              className={
+                activeTheme === "dark"
+                  ? "h-6 w-6 text-blue-100"
+                  : "text-gray-500 h-6 w-6"
+              }
+            />
           </button>
         </div>
 
