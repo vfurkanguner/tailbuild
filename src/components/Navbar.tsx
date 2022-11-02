@@ -8,24 +8,31 @@ import { CodeBracketIcon } from "@heroicons/react/20/solid";
 type Props = {
   onCloseDarkMode: () => void;
   onOpenDarkMode: () => void;
+  openModal: () => void;
+  markup: string;
 };
 
-export default function Navbar({ onOpenDarkMode, onCloseDarkMode}: Props) {
-  const { activeTheme, openDark, openLight, toggleTheme  } = useTheme() as ThemeContextType;
+export default function Navbar({
+  markup,
+  onOpenDarkMode,
+  onCloseDarkMode,
+  openModal,
+}: Props) {
+  const { activeTheme, openDark, openLight, toggleTheme } =
+    useTheme() as ThemeContextType;
 
   const openDarkMode = () => {
     onOpenDarkMode();
     openDark();
     document.body.classList.remove("light");
     document.body.classList.add("dark");
-  }
+  };
   const closeDarkMode = () => {
     onCloseDarkMode();
     openLight();
     document.body.classList.remove("dark");
     document.body.classList.add("light");
-  }
-
+  };
 
   return (
     <div className={`pl-64 w-full p-4 bg-transparent flex  justify-between`}>
@@ -69,8 +76,10 @@ export default function Navbar({ onOpenDarkMode, onCloseDarkMode}: Props) {
         </div>
 
         <button
+          disabled={markup.length === 0}
+          onClick={openModal}
           type="button"
-          className="flex items-center px-6 py-2  rounded-lg text-white bg-blue-600 hover:bg-blue-700"
+          className="flex disabled:bg-blue-100 items-center px-6 py-2  rounded-lg text-white bg-blue-600 hover:bg-blue-700"
         >
           Code
           <CodeBracketIcon className="h-5 w-5 text-white ml-2" />

@@ -5,10 +5,24 @@ import ThemeProvider from "./contexts/ThemeContext";
 import DeviceView from "./components/DeviceView";
 import DraggableList from "./components/DraggableList";
 import Frame from "react-frame-component";
+import Modal from "./components/CodeModal";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 function App() {
   const [view, setView] = useState("desktop"); // desktop, tablet, mobile
   const [list, setList] = useState([]);
+  const [markup, setMarkup] = useState("");
+  const [hasElement, setHasElement] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
   const ref = useRef(null);
   const frameRef = useRef(null);
@@ -16,6 +30,59 @@ function App() {
   const handleScrollToLastElement = () => {
     ref?.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  function beautifyHTML(codeStr: any) {
+    if (!codeStr) {
+      return "";
+    }
+    const process = (str: string) => {
+      let div = document.createElement("div");
+      div.innerHTML = str.trim();
+      return format(div, 0).innerHTML.trim();
+    };
+
+    const format = (node: HTMLDivElement, level: number) => {
+      let indentBefore = new Array(level++ + 1).join("  "),
+        indentAfter = new Array(level - 1).join("  "),
+        textNode;
+
+      for (let i = 0; i < node.children.length; i++) {
+        textNode = document.createTextNode("\n" + indentBefore);
+        node.insertBefore(textNode, node.children[i]);
+
+        format(node.children[i], level);
+
+        if (node.lastElementChild === node.children[i]) {
+          textNode = document.createTextNode("\n" + indentAfter);
+          node.appendChild(textNode);
+        }
+      }
+      return node;
+    };
+    return process(codeStr);
+  }
+
+  useEffect(() => {
+    // const el = ref?.current?.innerHTML;
+    // if (ref.current) {
+    //   const el = ref?.current;
+    //   const newDiv = document.createElement("body");
+    //   newDiv.append(el);
+    //   let newCode = beautifyHTML(newDiv.innerHTML);
+
+    //   setMarkup((prevProps) => {
+    //     return (prevProps += "\n" + newCode);
+    //   });
+    // }
+
+    const el = ref?.current?.innerHTML;
+    let newCode = beautifyHTML(el);
+    setMarkup((prevProps) => {
+      return (prevProps += "\n" + newCode);
+    }
+    );
+
+  }, [list]);
 
   const onOpenDarkMode = () => {
     const frame = frameRef.current as any;
@@ -25,12 +92,24 @@ function App() {
     const frame = frameRef.current as any;
     frame.contentWindow.document.body.classList.remove("dark");
   };
+
   return (
     <ThemeProvider>
       <div className="bg-gray-100 dark:bg-zinc-900 transition-all dark:text-zinc-50 text-zinc-900 min-h-screen pb-16">
         <div className="md:hidden h-screen">
           To work with this app, you need to wider your screen.
         </div>
+
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          <SyntaxHighlighter
+            style={vs2015}
+            language="javascript"
+            showLineNumbers
+          >
+            {markup}
+          </SyntaxHighlighter>
+        </Modal>
+
         <div className="hidden md:flex flex-col">
           <Sidebar
             list={list}
@@ -38,6 +117,8 @@ function App() {
             handleScrollToLastElement={handleScrollToLastElement}
           />
           <Navbar
+            markup={markup}
+            openModal={openModal}
             onOpenDarkMode={onOpenDarkMode}
             onCloseDarkMode={onCloseDarkMode}
           />
