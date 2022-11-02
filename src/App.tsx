@@ -10,8 +10,12 @@ function App() {
   const [view, setView] = useState("desktop"); // desktop, tablet, mobile
   const [list, setList] = useState([]);
 
-  const myRef = useRef(null);
+  const ref = useRef(null);
   const frameRef = useRef(null);
+
+  const handleScrollToLastElement = () => {
+    ref?.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const onOpenDarkMode = () => {
     const frame = frameRef.current as any;
@@ -28,7 +32,11 @@ function App() {
           To work with this app, you need to wider your screen.
         </div>
         <div className="hidden md:flex flex-col">
-          <Sidebar list={list} setList={setList} />
+          <Sidebar
+            list={list}
+            setList={setList}
+            handleScrollToLastElement={handleScrollToLastElement}
+          />
           <Navbar
             onOpenDarkMode={onOpenDarkMode}
             onCloseDarkMode={onCloseDarkMode}
@@ -75,10 +83,6 @@ function App() {
                       rel="stylesheet"
                       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"
                     />,
-                    <link
-                      rel="stylesheet"
-                      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-                    />,
                     // import Open Sans font
                     <link
                       rel="stylesheet"
@@ -93,7 +97,7 @@ function App() {
                     </style>,
                   ]}
                 >
-                  <DraggableList list={list} myRef={myRef} setList={setList} />
+                  <DraggableList list={list} ref={ref} setList={setList} />
                 </Frame>
               </main>
             </div>
