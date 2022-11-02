@@ -8,8 +8,8 @@ export default function FooterA({}: Props) {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4  px-6 py-4 text-slate-100 font-light">
         <h2 className="col-span-2 md:col-span-1 inline-flex space-x-2">
           <img
-            src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
-            alt="Workflow"
+            src="/public/vite.svg"
+            alt="Taildrop"
             className="h-8 w-auto"
           />
           <span className="text-zinc-900 dark:text-zinc-100 font-bold text-2xl">

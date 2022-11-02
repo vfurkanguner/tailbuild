@@ -8,8 +8,8 @@ export default function HeaderB({}: Props) {
     <nav className="w-full text-white dark:bg-slate-900 flex p-4 items-center">
       <div className="inline-flex space-x-2 mr-4">
         <img
-          src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
-          alt="Workflow"
+          src="/public/vite.svg"
+          alt="Taildrop"
           className="h-8 w-auto"
         />
         <span className="hidden md:block text-slate-900 dark:text-slate-100 font-bold text-2xl">

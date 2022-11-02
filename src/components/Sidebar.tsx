@@ -37,8 +37,8 @@ export default function Sidebar({ setList, list }: Props) {
     <div className="w-64  bg-white dark:bg-zinc-800/90 border dark:border-zinc-800 fixed  overflow-y-auto h-full px-2 py-8">
       <h2 className="inline-flex items-center space-x-2">
         <img
-          src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-          alt="Workflow"
+          src="/public/vite.svg"
+          alt="Taildrop"
           className="h-8 w-auto"
         />
         <span className="text-zinc-900 dark:text-zinc-100 font-bold text-2xl">

@@ -9,8 +9,8 @@ export default function FooterB({}: Props) {
         <div className="flex  flex-col md:flex-row items-center justify-between px-6 py-4 space-y-2 text-center text-zinc-900 dark:text-zinc-100">
           <h2 className="inline-flex space-x-2">
             <img
-              src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
-              alt="Workflow"
+              src="/public/vite.svg"
+              alt="Taildrop"
               className="h-8 w-auto"
             />
             <span className="text-zinc-900 dark:text-zinc-100 font-bold text-2xl">
