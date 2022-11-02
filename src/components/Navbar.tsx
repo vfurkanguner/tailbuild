@@ -70,9 +70,9 @@ export default function Navbar({ onOpenDarkMode, onCloseDarkMode}: Props) {
 
         <button
           type="button"
-          className="flex items-center px-6 py-2  rounded-lg text-white bg-indigo-600 hover:bg-indigo-700"
+          className="flex items-center px-6 py-2  rounded-lg text-white bg-blue-600 hover:bg-blue-700"
         >
-          HTML
+          Code
           <CodeBracketIcon className="h-5 w-5 text-white ml-2" />
         </button>
       </div>

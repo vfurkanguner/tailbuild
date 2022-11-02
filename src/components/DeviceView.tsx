@@ -20,7 +20,7 @@ export default function DeviceView({ setView, view }: Props) {
         className={classNames(
           "px-2 py-2 rounded hover:cursor-pointer",
           view === "desktop"
-            ? "bg-indigo-100 text-indigo-500 dark:bg-zinc-800"
+            ? "bg-blue-100 text-blue-500 dark:bg-zinc-800"
             : "text-gray-500"
         )}
       >
@@ -31,7 +31,7 @@ export default function DeviceView({ setView, view }: Props) {
         className={classNames(
           "px-2 py-2 rounded hover:cursor-pointer",
           view === "tablet"
-            ? "bg-indigo-100 text-indigo-500 dark:bg-zinc-800"
+            ? "bg-blue-100 text-blue-500 dark:bg-zinc-800"
             : "text-gray-500"
         )}
         onClick={() => setView("tablet")}
@@ -43,7 +43,7 @@ export default function DeviceView({ setView, view }: Props) {
         className={classNames(
           "px-2 py-2 rounded hover:cursor-pointer",
           view === "mobile"
-            ? "bg-indigo-100 text-indigo-500 dark:bg-zinc-800"
+            ? "bg-blue-100 text-blue-500 dark:bg-zinc-800"
             : "text-gray-500"
         )}
         onClick={() => setView("mobile")}
