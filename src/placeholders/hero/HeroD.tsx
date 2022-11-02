@@ -71,7 +71,7 @@ export default function HeroD({}: Props) {
         rx="4.8"
         fill="white"
         stroke="#C9C9C9"
-        stroke-width="0.4"
+        strokeWidth="0.4"
       />
       <rect
         x="183.798"
@@ -97,7 +97,7 @@ export default function HeroD({}: Props) {
         x2="73.1"
         y2="13"
         stroke="#C9C9C9"
-        stroke-width="0.2"
+        strokeWidth="0.2"
       />
       <line
         x1="108.1"
@@ -105,7 +105,7 @@ export default function HeroD({}: Props) {
         x2="108.1"
         y2="13"
         stroke="#C9C9C9"
-        stroke-width="0.2"
+        strokeWidth="0.2"
       />
       <line
         x1="150.1"
@@ -113,7 +113,7 @@ export default function HeroD({}: Props) {
         x2="150.1"
         y2="13"
         stroke="#C9C9C9"
-        stroke-width="0.2"
+        strokeWidth="0.2"
       />
     </svg>
   );

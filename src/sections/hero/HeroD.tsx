@@ -8,7 +8,7 @@ export default function HeroD({}: Props) {
     <div className="text-slate-900 dark:text-slate-100 bg-white dark:bg-slate-900 p-4 space-y-4">
       <div className="px-8">
         <div className="px-4 border rounded-full flex items-center w-full">
-          <div className="grid grid-cols-4 py-2">
+          <div className="grid grid-cols-4 py-2 w-full">
             <div className="col-span-4 sm:col-span-2 border-r">
               <label htmlFor="location" className="sr-only">
                 Location
@@ -46,7 +46,11 @@ export default function HeroD({}: Props) {
               />
             </div>
           </div>
-          <button type="submit" className="ml-4 bg-blue-600 p-2 rounded-md text-white">
+
+          <button
+            type="submit"
+            className="ml-4 bg-blue-600 p-2 rounded-md text-white"
+          >
             <MagnifyingGlassIcon className="h-6 w-6" />
           </button>
         </div>

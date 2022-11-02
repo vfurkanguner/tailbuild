@@ -5,17 +5,19 @@ type Props = {};
 
 export default function HeaderB({}: Props) {
   return (
-    <nav className="w-full text-white dark:bg-slate-900 flex p-4 items-center">
-      <div className="inline-flex space-x-2 mr-4">
+    <nav className="w-full text-white gap-2 dark:bg-slate-900 flex p-4 justify-between items-center">
+      <div className="hidden md:inline-flex space-x-2 mr-4">
         <img
           src="/public/vite.svg"
           alt="Taildrop"
           className="h-8 w-auto"
         />
-        <span className="hidden md:block text-slate-900 dark:text-slate-100 font-bold text-2xl">
+        <span className="md:block text-slate-900 dark:text-slate-100 font-bold text-2xl">
           Taildrop
         </span>
       </div>
+
+      <input className="flex-1 py-2 px-4 rounded-lg max-w-xl" placeholder="Search" />
 
       <ul className="hidden md:flex space-x-4 dark:text-slate-100 text-slate-900">
         <li className="rounded-md dark:text-slate-100 hover:cursor-pointer dark:bg-blue-800  px-4 py-2">
