@@ -35,7 +35,7 @@ import NewsletterA from "./newsletter/NewsletterA";
 import NewsletterB from "./newsletter/NewsletterB";
 import NewsletterC from "./newsletter/NewsletterC";
 import FormA from "./forms/FormsA";
-import EcommerceA from './ecommerce/EcommerceA';
+// import EcommerceA from './ecommerce/EcommerceA';
 
 export default function getSections() {
   return {
@@ -93,9 +93,9 @@ export default function getSections() {
       NewsletterB: <NewsletterB />,
       NewsletterC: <NewsletterC />,
     },
-    form: {
-      FormA: <FormA />,
-      FormB: <div>Form B</div>,
-    },
+    // form: {
+    //   FormA: <FormA />,
+    //   FormB: <div>Form B</div>,
+    // },
   };
 }

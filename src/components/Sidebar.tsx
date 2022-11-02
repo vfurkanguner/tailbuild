@@ -47,31 +47,31 @@ export default function Sidebar({ setList, list }: Props) {
       </h2>
 
       {/*content */}
-      <ul className="mt-8">
+      <ul className="mt-8 space-y-8">
         {Object.entries(iconList).map(([type, icons]) => (
-          <div className="blocks" key={type}>
-            <div className="block-category uppercase text-sm font-medium">
+          <div className="" key={type}>
+            <div className=" uppercase text-sm font-medium">
               {type}
             </div>
-            <div className="block-list">
+            <div className="space-y-6 mt-4">
               {Object.entries(icons).map((icon) => {
                 const blockName = icon[0];
                 const block = getSections()[type][blockName];
                 const newBlock = {
-                  ...block,
                   name: blockName,
+                  ...block,
                 };
                 return (
                   <button
                     draggable
                     onDragEnd={() => onDragEnd(newBlock)}
-                    className="w-full h-10"
+                    className="w-full h-full bg-gray-200 dark:bg-slate-900 rounded-md px-2  py-2 hover:cursor-grab grayscale hover:grayscale-0"
                     key={icon[0]}
                     block-type={type}
                     block-name={blockName}
                   >
                     {/* {icon[1]} */}
-                    {icon[0]}
+                    {icon[1]}
                   </button>
                 );
               })}

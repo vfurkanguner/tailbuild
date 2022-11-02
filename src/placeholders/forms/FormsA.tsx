@@ -2,7 +2,7 @@ import React from "react";
 
 type Props = {};
 
-export default function HeaderA({}: Props) {
+export default function FormsA({}: Props) {
   return (
     <svg
       width="210"
@@ -29,11 +29,18 @@ export default function HeaderA({}: Props) {
         d="M9.31087 8.31968L12.3986 5.22713C12.8075 4.82012 13.4736 4.82012 13.8806 5.22713L15.6939 7.04239C16.1019 7.44989 16.1019 8.11837 15.6939 8.52633L12.6052 11.6179C12.1972 12.0254 11.5302 12.0254 11.1223 11.6179L9.31087 9.80411C8.90289 9.39613 8.90289 8.72765 9.31087 8.31968Z"
         fill="#4F46E5"
       />
-      <rect x="94" y="6" width="12" height="5" rx="1" fill="#666666" />
-      <rect x="111" y="6" width="12" height="5" rx="1" fill="#666666" />
-      <rect x="128" y="6" width="12" height="5" rx="1" fill="#666666" />
-      <rect x="145" y="6" width="12" height="5" rx="1" fill="#666666" />
-      <rect x="167" y="1" width="43" height="13" rx="6.5" fill="#2563EB" />
+      <rect x="60" y="5.39307" width="12" height="5" rx="1" fill="#666666" />
+      <rect x="77" y="5.39307" width="12" height="5" rx="1" fill="#666666" />
+      <rect x="94" y="5.39307" width="12" height="5" rx="1" fill="#666666" />
+      <rect x="111" y="5.39307" width="12" height="5" rx="1" fill="#666666" />
+      <rect
+        x="167"
+        y="1.39307"
+        width="43"
+        height="13"
+        rx="6.5"
+        fill="#2563EB"
+      />
       <line y1="23.5" x2="210" y2="23.5" stroke="#EAEAEA" />
     </svg>
   );

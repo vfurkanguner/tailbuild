@@ -55,9 +55,11 @@ export default function CTAD({}: Props) {
         </ul>
 
         <div className="flex justify-center items-center">
-          <button className="bg-blue-600 px-6 py-3 text-white text-lg hover:bg-blue-700 rounded-full">
+        <div className="mt-16 w-full max-w-xs">
+          <button className="bg-blue-600 w-full px-6 py-3 text-white text-lg hover:bg-blue-700 rounded-full">
             Join now
           </button>
+        </div>
         </div>
       </div>
     </div>
