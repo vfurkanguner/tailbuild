@@ -14,8 +14,15 @@ export default function ThemeProvider({ children }: Props) {
   const toggleTheme = () => {
     setActiveTheme(activeTheme === "light" ? "dark" : "light");
   };
+
+  const openDark = () => {
+    setActiveTheme("dark");
+  };
+  const openLight = () => {
+    setActiveTheme("light");
+  };
   return (
-    <Context.Provider value={{ activeTheme, toggleTheme  }}>
+    <Context.Provider value={{ activeTheme, toggleTheme, openDark, openLight  }}>
       {children}
     </Context.Provider>
   );

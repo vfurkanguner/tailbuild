@@ -5,20 +5,27 @@ import classNames from "../utils/classNames";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { CodeBracketIcon } from "@heroicons/react/20/solid";
 
-type Props = {};
-export const colors = ["green", "red", "blue", "yellow", "pink", "indigo"];
+type Props = {
+  onCloseDarkMode: () => void;
+  onOpenDarkMode: () => void;
+};
 
-export default function Navbar({}: Props) {
-  const { activeTheme, toggleTheme } = useTheme() as ThemeContextType;
+export default function Navbar({ onOpenDarkMode, onCloseDarkMode}: Props) {
+  const { activeTheme, openDark, openLight, toggleTheme  } = useTheme() as ThemeContextType;
 
-  const onToggleDarkMode = () => {
-    toggleTheme();
-    document.body.classList.toggle("dark");
-  };
+  const openDarkMode = () => {
+    onOpenDarkMode();
+    openDark();
+    document.body.classList.remove("light");
+    document.body.classList.add("dark");
+  }
+  const closeDarkMode = () => {
+    onCloseDarkMode();
+    openLight();
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+  }
 
-  const onButtonClick = () => {
-    onToggleDarkMode();
-  };
 
   return (
     <div className={`pl-64 w-full p-4 bg-transparent flex  justify-between`}>
@@ -26,7 +33,7 @@ export default function Navbar({}: Props) {
         <div className="inline-flex bg-white dark:bg-zinc-800  shadow px-2 py-1 rounded-lg">
           <button
             type="button"
-            onClick={onButtonClick}
+            onClick={closeDarkMode}
             className={
               activeTheme === "light"
                 ? "px-2 py-1 bg-gray-100 dark:bg-zinc-600 rounded-lg transition-all"
@@ -43,7 +50,7 @@ export default function Navbar({}: Props) {
           </button>
 
           <button
-            onClick={onButtonClick}
+            onClick={openDarkMode}
             type="button"
             className={classNames(
               activeTheme === "dark"

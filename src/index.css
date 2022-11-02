@@ -12,6 +12,16 @@
   --pink-500: #ec4899;
   --zinc-500: #71717a;
   --gray-500: #6b7280;
+  --base-500: #A0AEC0;
+  --base-200: #E2E8F0;
+  --base-300: #E2E8F0;
+  --base-400: #CBD5E0;
+  --main-500: #6366f1;
+  --main-400: #7F9CF5;
+  --main-200: #c3dafe;
+  --main-100: #EBF4FF;
+  --solid: #FFF;
+  --solid-900: #4a5568;
 }
 
 
@@ -23,18 +33,23 @@ body {
 .theme-blue {
   background-color: var(--blue-500);
 }
+
 .theme-red {
   background-color: var(--red-500);
 }
+
 .theme-green {
   background-color: var(--green-500);
 }
+
 .theme-indigo {
   background-color: var(--indigo-500);
 }
+
 .theme-pink {
   background-color: var(--pink-500);
 }
+
 .theme-yellow {
   background-color: var(--yellow-500);
 }
@@ -42,18 +57,22 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover: bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
   }
 }
 
 .desktop {
   width: 100%;
+  position: relative;
 }
 
 .tablet {
   width: 768px;
+  position: relative;
 }
 
 .mobile {
   width: 450px;
+  position: relative;
 }
+
