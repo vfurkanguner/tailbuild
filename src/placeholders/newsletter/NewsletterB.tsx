@@ -16,8 +16,8 @@ export default function NewsletterB({}: Props) {
         x2="209"
         y2="0.85"
         stroke="#C0C0C0"
-        stroke-opacity="0.01"
-        stroke-width="0.3"
+        strokeOpacity="0.01"
+        strokeWidth="0.3"
       />
       <rect x="73" y="4" width="64" height="9" rx="1" fill="#666666" />
       <rect x="65" y="20" width="80" height="9" rx="1" fill="#C6C6C6" />
@@ -29,7 +29,7 @@ export default function NewsletterB({}: Props) {
         rx="0.85"
         fill="white"
         stroke="#EAEAEA"
-        stroke-width="0.3"
+        strokeWidth="0.3"
       />
       <rect x="126" y="38" width="34" height="9" rx="1" fill="#2563EB" />
     </svg>
