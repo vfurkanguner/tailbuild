@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import ThemeProvider from "./contexts/ThemeContext";
@@ -28,8 +28,7 @@ function App() {
     setIsModalOpen(true);
   };
 
-  const ref = useRef<null | HTMLDivElement>(null);
-
+  const ref = useRef<HTMLDivElement | null>(null);
   const frameRef = useRef(null);
 
   const handleScrollToLastElement = () => {
