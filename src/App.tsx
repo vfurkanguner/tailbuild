@@ -8,6 +8,7 @@ import Frame from "react-frame-component";
 import Modal from "./components/CodeModal";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import MobileScreen from "./components/MobileScreen";
 
 interface ListItem {
   id: number;
@@ -99,7 +100,7 @@ function App() {
     <ThemeProvider>
       <div className="bg-gray-100 dark:bg-zinc-900 transition-all dark:text-zinc-50 text-zinc-900 min-h-screen pb-16">
         <div className="md:hidden h-screen">
-          To work with this app, you need to wider your screen.
+          <MobileScreen />
         </div>
 
         <Modal isOpen={isModalOpen} onClose={closeModal}>
