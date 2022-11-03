@@ -4,12 +4,14 @@ import { useTheme } from "../contexts/ThemeContext";
 import classNames from "../utils/classNames";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { CodeBracketIcon } from "@heroicons/react/20/solid";
+import { ArrowDownCircleIcon } from "@heroicons/react/24/outline";
 
 type Props = {
   onCloseDarkMode: () => void;
   onOpenDarkMode: () => void;
   openModal: () => void;
   markup: string;
+  downLoadHtml: () => void;
 };
 
 export default function Navbar({
@@ -17,9 +19,9 @@ export default function Navbar({
   onOpenDarkMode,
   onCloseDarkMode,
   openModal,
+  downLoadHtml,
 }: Props) {
-  const { activeTheme, openDark, openLight, toggleTheme } =
-    useTheme() as ThemeContextType;
+  const { activeTheme, openDark, openLight } = useTheme() as ThemeContextType;
 
   const openDarkMode = () => {
     onOpenDarkMode();
@@ -32,6 +34,10 @@ export default function Navbar({
     openLight();
     document.body.classList.remove("dark");
     document.body.classList.add("light");
+  };
+
+  const onBtnClick = () => {
+    downLoadHtml();
   };
 
   return (
@@ -74,16 +80,26 @@ export default function Navbar({
             />
           </button>
         </div>
-
-        <button
-          disabled={markup.length === 0}
-          onClick={openModal}
-          type="button"
-          className="flex disabled:bg-blue-100 items-center px-6 py-2  rounded-lg text-white bg-blue-600 hover:bg-blue-700"
-        >
-          Code
-          <CodeBracketIcon className="h-5 w-5 text-white ml-2" />
-        </button>
+        <div className="inline-flex gap-4">
+          <button
+            disabled={markup.length === 0}
+            onClick={openModal}
+            type="button"
+            className="flex disabled:opacity-20 items-center px-6 py-2 text-white  rounded-lg bg-blue-600 hover:bg-blue-70"
+          >
+            Code
+            <CodeBracketIcon className="h-5 w-5 ml-2" />
+          </button>
+          <button
+            disabled={markup.length === 0}
+            onClick={onBtnClick}
+            type="button"
+            className="flex disabled:opacity-20 items-center px-6 py-2  rounded-lg text-white  bg-slate-800 dark:bg-slate-700 hover:bg-slate-900 "
+          >
+            Download file
+            <ArrowDownCircleIcon className="h-5 w-5 text-white ml-2" />
+          </button>
+        </div>
       </div>
     </div>
   );

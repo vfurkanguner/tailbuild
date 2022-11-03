@@ -9,6 +9,7 @@ import Modal from "./components/CodeModal";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import MobileScreen from "./components/MobileScreen";
+import { renderToString } from "react-dom/server";
 
 interface ListItem {
   id: number;
@@ -68,33 +69,58 @@ function App() {
   }
 
   useEffect(() => {
-    // const el = ref?.current?.innerHTML;
-    // if (ref.current) {
-    //   const el = ref?.current;
-    //   const newDiv = document.createElement("body");
-    //   newDiv.append(el);
-    //   let newCode = beautifyHTML(newDiv.innerHTML);
-
-    //   setMarkup((prevProps) => {
-    //     return (prevProps += "\n" + newCode);
-    //   });
-    // }
-
-    const el = ref?.current?.innerHTML;
-    let newCode = beautifyHTML(el);
-    setMarkup((prevProps) => {
-      return (prevProps += "\n" + newCode);
+    const div = document.createElement("div");
+    list.forEach((item: any) => {
+      const htmlItem = renderToString(item);
+      div.innerHTML += htmlItem;
+      let newCode = beautifyHTML(div.innerHTML);
+      setMarkup(newCode);
     });
-  }, [list]);
+  }, [list, markup]);
 
   const onOpenDarkMode = () => {
     const frame = frameRef.current as any;
     frame.contentWindow.document.body.classList.add("dark");
   };
+
   const onCloseDarkMode = () => {
     const frame = frameRef.current as any;
     frame.contentWindow.document.body.classList.remove("dark");
   };
+
+  const downloadAsHtmlFile = () => {
+    const element = document.createElement("a");
+    const file = new Blob([html], { type: "text/html" });
+    element.href = URL.createObjectURL(file);
+    element.download = "index.html";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  };
+
+  const html = `
+  <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!--  DON'T FORGET TO SETUP TAILWIND FROM OFFICIAL DOC -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style type="text/tailwindcss">
+          @layer base {
+            html {
+              @apply dark:bg-slate-900 bg-white;
+            }
+          }
+        </style>
+        <!--REMOVE THIS BLOCK: DON'T FORGET TO SETUP TAILWIND FROM DOC. -->
+      </head>
+      <body class="container mx-auto">
+        ${markup}
+      </body>
+    </html>
+`;
 
   return (
     <ThemeProvider>
@@ -104,12 +130,8 @@ function App() {
         </div>
 
         <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <SyntaxHighlighter
-            style={vs2015}
-            language="javascript"
-            showLineNumbers
-          >
-            {markup}
+          <SyntaxHighlighter style={vs2015} language="javascript" wrapLines>
+            {html}
           </SyntaxHighlighter>
         </Modal>
 
@@ -120,6 +142,7 @@ function App() {
             handleScrollToLastElement={handleScrollToLastElement}
           />
           <Navbar
+            downLoadHtml={downloadAsHtmlFile}
             markup={markup}
             openModal={openModal}
             onOpenDarkMode={onOpenDarkMode}
