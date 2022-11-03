@@ -21,7 +21,7 @@ export default function PricingB({}: Props) {
         rx="1.75"
         fill="#2563EB"
         stroke="#2563EB"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <rect x="5" y="61" width="56" height="9" rx="1" fill="#2563EB" />
       <rect
@@ -31,7 +31,7 @@ export default function PricingB({}: Props) {
         height="81.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <rect x="77" y="61" width="56" height="9" rx="1" fill="#2563EB" />
       <rect
@@ -41,7 +41,7 @@ export default function PricingB({}: Props) {
         height="81.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <rect x="149" y="61" width="56" height="9" rx="1" fill="#002168" />
     </svg>

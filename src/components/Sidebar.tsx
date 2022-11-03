@@ -4,32 +4,31 @@ import getSections from "../sections";
 import StyledAccordion from "./StyledAccordion";
 
 type Props = {
-  list: string[];
-  setList: (list: string[]) => void;
+  list: object[];
+  setList: (list: any) => void;
   handleScrollToLastElement: () => void;
 };
 
 const iconList = getPlaceholders();
+
 const blockListArr = [];
 
 Object.entries(iconList).forEach(([type, icons]) => {
   Object.keys(icons).map((name) => blockListArr.push(`${name},${type}`));
 });
 
+type Block = {
+  name: string;
+  id: string;
+};
+
 export default function Sidebar({
   setList,
   list,
   handleScrollToLastElement,
 }: Props) {
-  const onDragEnd = (block: string) => {
-    setList(() => {
-      const isComponentInList = list.includes(block);
-      if (isComponentInList) {
-        return list;
-      } else {
-        return [...list, block];
-      }
-    });
+  const onDragEnd = (block: Block) => {
+    setList([...list, block]);
     handleScrollToLastElement();
   };
 
@@ -50,7 +49,8 @@ export default function Sidebar({
               <div className="space-y-6 mt-4">
                 {Object.entries(icons).map((icon) => {
                   const blockName = icon[0];
-                  const block = getSections()[type][blockName];
+                  const block: object = getSections()[type as keyof {}][blockName];
+
                   const newBlock = {
                     name: blockName,
                     id: `${new Date().getTime()}`,

@@ -21,7 +21,7 @@ export default function NewsletterC({}: Props) {
         rx="0.85"
         fill="white"
         stroke="#EAEAEA"
-        stroke-width="0.3"
+        strokeWidth="0.3"
       />
       <rect x="176" width="34" height="9" rx="1" fill="#2563EB" />
     </svg>

@@ -9,11 +9,15 @@ import Modal from "./components/CodeModal";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
+interface ListItem {
+  id: number;
+  name: string;
+  type: string;
+}
 function App() {
   const [view, setView] = useState("desktop"); // desktop, tablet, mobile
-  const [list, setList] = useState([]);
+  const [list, setList] = useState<ListItem[]>([]);
   const [markup, setMarkup] = useState("");
-  const [hasElement, setHasElement] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const closeModal = () => {
@@ -24,7 +28,8 @@ function App() {
     setIsModalOpen(true);
   };
 
-  const ref = useRef(null);
+  const ref = useRef<null | HTMLDivElement>(null);
+
   const frameRef = useRef(null);
 
   const handleScrollToLastElement = () => {
@@ -41,7 +46,7 @@ function App() {
       return format(div, 0).innerHTML.trim();
     };
 
-    const format = (node: HTMLDivElement, level: number) => {
+    const format = (node: HTMLDivElement | any, level: number) => {
       let indentBefore = new Array(level++ + 1).join("  "),
         indentAfter = new Array(level - 1).join("  "),
         textNode;
@@ -79,9 +84,7 @@ function App() {
     let newCode = beautifyHTML(el);
     setMarkup((prevProps) => {
       return (prevProps += "\n" + newCode);
-    }
-    );
-
+    });
   }, [list]);
 
   const onOpenDarkMode = () => {

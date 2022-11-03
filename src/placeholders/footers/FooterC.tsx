@@ -26,7 +26,7 @@ export default function FooterC({}: Props) {
         rx="0.85"
         fill="white"
         stroke="#EAEAEA"
-        stroke-width="0.3"
+        strokeWidth="0.3"
       />
       <rect x="49" y="31" width="18" height="7" rx="1" fill="#2563EB" />
       <rect x="90" y="27" width="16" height="5" rx="1" fill="#C6C6C6" />

@@ -69,7 +69,7 @@ export default function HeroE({}: Props) {
         rx="0.85"
         fill="white"
         stroke="#EAEAEA"
-        stroke-width="0.3"
+        strokeWidth="0.3"
       />
       <rect x="76" y="59" width="34" height="14" rx="1" fill="#2563EB" />
     </svg>

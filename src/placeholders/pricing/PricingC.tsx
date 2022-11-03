@@ -31,7 +31,7 @@ export default function PricingC({}: Props) {
         height="44.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <rect
         x="110.5"
@@ -72,7 +72,7 @@ export default function PricingC({}: Props) {
         height="44.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <rect
         x="164"
@@ -99,7 +99,7 @@ export default function PricingC({}: Props) {
         height="44.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <line x1="1" y1="105.5" x2="211" y2="105.5" stroke="#EAEAEA" />
       <line x1="1" y1="117.5" x2="211" y2="117.5" stroke="#EAEAEA" />

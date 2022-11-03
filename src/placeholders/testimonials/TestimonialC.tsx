@@ -23,7 +23,7 @@ export default function TestimonialC({}: Props) {
         height="53.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <circle cx="9.5" cy="80.5" r="6.5" fill="#2563EB" />
       <rect x="19" y="78" width="42" height="6" rx="1" fill="#C6C6C6" />
@@ -37,7 +37,7 @@ export default function TestimonialC({}: Props) {
         height="53.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <circle cx="80.5" cy="80.5" r="6.5" fill="#2563EB" />
       <rect x="90" y="78" width="42" height="6" rx="1" fill="#C6C6C6" />
@@ -51,7 +51,7 @@ export default function TestimonialC({}: Props) {
         height="53.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <circle cx="151.5" cy="80.5" r="6.5" fill="#2563EB" />
       <rect x="161" y="78" width="42" height="6" rx="1" fill="#C6C6C6" />

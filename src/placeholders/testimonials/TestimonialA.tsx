@@ -24,7 +24,7 @@ export default function TestimonialA({}: Props) {
         height="59.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <circle cx="10.5" cy="54.5" r="6.5" fill="#2563EB" />
       <rect x="93" y="50" width="42" height="9" rx="1" fill="#C6C6C6" />
@@ -38,7 +38,7 @@ export default function TestimonialA({}: Props) {
         height="59.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <circle cx="82.5" cy="54.5" r="6.5" fill="#2563EB" />
       <rect x="163" y="50" width="42" height="9" rx="1" fill="#C6C6C6" />
@@ -52,7 +52,7 @@ export default function TestimonialA({}: Props) {
         height="59.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <circle cx="152.5" cy="54.5" r="6.5" fill="#2563EB" />
     </svg>

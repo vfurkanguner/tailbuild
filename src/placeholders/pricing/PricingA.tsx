@@ -30,7 +30,7 @@ export default function PricingA({}: Props) {
         height="59.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <rect x="77" y="44" width="56" height="9" rx="1" fill="#2563EB" />
       <rect x="93" y="6" width="25" height="9" rx="1" fill="#666666" />
@@ -43,7 +43,7 @@ export default function PricingA({}: Props) {
         height="59.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <rect
         x="149"
@@ -64,7 +64,7 @@ export default function PricingA({}: Props) {
         height="59.5"
         rx="1.75"
         stroke="#D9D9D9"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
     </svg>
   );
