@@ -22,7 +22,7 @@ export default function CTAC({}: Props) {
         height="8"
         rx="1"
         fill="#2563EB"
-        fill-opacity="0.15"
+        fillOpacity="0.15"
       />
     </svg>
   );

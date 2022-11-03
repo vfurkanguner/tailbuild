@@ -18,7 +18,7 @@ export default function PricingA({}: Props) {
         height="9"
         rx="1"
         fill="#2563EB"
-        fill-opacity="0.15"
+        fillOpacity="0.15"
       />
       <rect x="21" y="21" width="25" height="9" rx="1" fill="#666666" />
       <rect x="19" y="32" width="29" height="9" rx="1" fill="#C6C6C6" />
@@ -52,7 +52,7 @@ export default function PricingA({}: Props) {
         height="9"
         rx="1"
         fill="#2563EB"
-        fill-opacity="0.15"
+        fillOpacity="0.15"
       />
       <rect x="165" y="21" width="25" height="9" rx="1" fill="#666666" />
       <rect x="163" y="32" width="29" height="9" rx="1" fill="#C6C6C6" />
