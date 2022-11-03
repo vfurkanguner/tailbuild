@@ -6,30 +6,19 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
     "react": "^18.2.0",
-    "react-beautiful-dnd": "^13.1.1",
-    "react-beautiful-dnd-iframe": "^9.0.3",
+    "react-beautiful-dnd": "^11.0.5",
     "react-dom": "^18.2.0",
     "react-frame-component": "^5.2.3",
     "react-syntax-highlighter": "^15.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
-    "@storybook/addon-actions": "^6.5.13",
-    "@storybook/addon-essentials": "^6.5.13",
-    "@storybook/addon-interactions": "^6.5.13",
-    "@storybook/addon-links": "^6.5.13",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/builder-vite": "^0.2.5",
-    "@storybook/react": "^6.5.13",
-    "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.22",
     "@types/react-beautiful-dnd": "^13.1.2",
     "@types/react-dom": "^18.0.7",
