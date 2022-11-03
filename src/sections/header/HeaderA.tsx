@@ -8,7 +8,7 @@ export default function HeaderA({}: Props) {
     <nav className="w-full bg-white dark:bg-slate-900 flex p-4  items-center justify-between">
       <div className="inline-flex space-x-2">
         <img
-          src="/public/vite.svg"
+          src="/src/assets/logo.svg"
           alt="Taildrop"
           className="h-8 w-auto"
         />

@@ -9,7 +9,7 @@ export default function FooterB({}: Props) {
         <div className="flex  flex-col md:flex-row items-center justify-between px-6 py-4 space-y-2 text-center text-zinc-900 dark:text-zinc-100">
           <h2 className="inline-flex space-x-2">
             <img
-              src="/public/vite.svg"
+              src="/src/assets/logo.svg"
               alt="Taildrop"
               className="h-8 w-auto"
             />

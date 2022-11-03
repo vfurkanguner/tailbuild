@@ -35,7 +35,7 @@ export default function Sidebar({
   return (
     <div className="w-64  bg-white dark:bg-zinc-800/90 border dark:border-zinc-800 fixed  overflow-y-auto h-full px-2 py-8">
       <h2 className="inline-flex items-center space-x-2">
-        <img src="/public/vite.svg" alt="Taildrop" className="h-8 w-auto" />
+        <img src="/src/assets/logo.svg" alt="Taildrop" className="h-8 w-auto" />
         <span className="text-zinc-900 dark:text-zinc-100 font-bold text-2xl">
           Taildrop
         </span>

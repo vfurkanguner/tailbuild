@@ -8,7 +8,7 @@ export default function FooterA({}: Props) {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4  px-6 py-4 text-slate-100 font-light">
         <h2 className="col-span-2 md:col-span-1 inline-flex space-x-2">
           <img
-            src="/public/vite.svg"
+            src="/src/assets/logo.svg"
             alt="Taildrop"
             className="h-8 w-auto"
           />
