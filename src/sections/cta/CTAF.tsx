@@ -5,7 +5,7 @@ type Props = {};
 
 export default function CTAF({}: Props) {
   return (
-    <div className="flex p-4 flex-col md:flex-row bg text-slate-900 dark:text-slate-100 items-center bg-white dark:bg-slate-900">
+    <div className="flex px-4 py-8 md:py-32 flex-col md:flex-row bg text-slate-900 dark:text-slate-100 items-center bg-white dark:bg-slate-900">
       <div className="w-full p-4 space-y-4">
         <div className="flex items-center gap-4 text-sm font-light text-slate-600">
           02

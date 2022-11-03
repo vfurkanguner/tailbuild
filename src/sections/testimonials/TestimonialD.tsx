@@ -4,7 +4,7 @@ type Props = {};
 
 export default function TestimonialD({}: Props) {
   return (
-    <div className="bg-slate-50  dark:bg-slate-900 dark:text-slate-100 text-slate-900">
+    <div className="bg-slate-50 py-8 md:py-32  dark:bg-slate-900 dark:text-slate-100 text-slate-900">
       <div className="flex flex-col justify-center items-center p-4">
         <div className="max-w-2xl flex-col flex justify-center items-center">
           <p className="text-2xl text-center font-medium">

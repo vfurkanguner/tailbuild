@@ -30,12 +30,12 @@ const DraggableList = React.forwardRef(
     };
 
     return (
-      <div className="w-full h-screen ">
+      <div className="w-full h-screen">
         <DragDropContext onDragEnd={onDragEnd}>
           <Droppable droppableId="list">
             {(provided) => (
               <div
-                className="hover:cursor-grab"
+                className="hover:cursor-grab  bg-white dark:bg-slate-900"
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
@@ -58,8 +58,8 @@ const DraggableList = React.forwardRef(
                                 ref={ref}
                                 className={classNames(
                                   snapshot.isDragging
-                                    ? "opacity-50 border-2 border-green-600"
-                                    : "opacity-100",
+                                    ? "opacity-50   border-2 border-green-600"
+                                    : "opacity-100 ",
                                   "hover:border-4 border-green-600"
                                 )}
                               >

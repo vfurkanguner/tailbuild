@@ -30,7 +30,7 @@ export default function HeroE({}: Props) {
               name="email"
               id="email"
               placeholder="Enter your email"
-              className="w-full border border-slate-300 rounded-md py-2 px-4"
+              className="w-full border dark:text-slate-900 border-slate-300 rounded-md py-2 px-4"
             />
             <button className="bg-blue-600 w-full  md:w-auto px-6 py-2 rounded-md text-lg text-slate-100">
               Subscribe

@@ -53,7 +53,7 @@ export default function HeaderB({}: Props) {
       </div>
 
       <input
-        className="flex-1 py-2 px-4 rounded-lg max-w-xl"
+        className="flex-1 py-2 text-slate-900  placeholder:text-slate-900 px-4 rounded-lg max-w-xl"
         placeholder="Search"
       />
 

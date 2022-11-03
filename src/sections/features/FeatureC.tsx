@@ -9,7 +9,7 @@ type Props = {};
 
 export default function FeatureC({}: Props) {
   return (
-    <div className="bg-white dark:bg-slate-900 dark:text-slate-100 text-slate-900 p-4">
+    <div className="bg-white py-8 md:py-32 dark:bg-slate-900 dark:text-slate-100 text-slate-900 px-4">
       <div className="space-y-8">
         <h2 className="text-5xl md:text-center font-semibold">
           Accept payments from any device from any country in the world

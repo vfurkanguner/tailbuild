@@ -5,7 +5,7 @@ type Props = {};
 
 export default function PricingB({}: Props) {
   return (
-    <div className="bg-slate-100 dark:bg-slate-900 dark:text-slate-100 text-slate-900 p-4">
+    <div className="bg-slate-100 py-8 md:py-32 dark:bg-slate-900 dark:text-slate-100 text-slate-900 px-4">
       <div className="py-8">
         <div className="text-center">
           <h2 className="text-3xl font-medium">Ready to get started?</h2>

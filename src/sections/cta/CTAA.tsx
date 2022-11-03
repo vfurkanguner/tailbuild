@@ -4,7 +4,7 @@ type Props = {};
 
 export default function CTAA({}: Props) {
   return (
-    <div className="bg-white dark:bg-slate-900 dark:text-slate-100 text-slate-900 p-4">
+    <div className="bg-white py-8 md:py-32 dark:bg-slate-900 dark:text-slate-100 text-slate-900 p-4">
       <div className="">
         <div className="flex flex-col md:flex-row gap-4 items-center py-4">
           <div className="flex-1 text-center md:text-left">

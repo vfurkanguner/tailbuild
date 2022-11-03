@@ -5,7 +5,7 @@ type Props = {};
 
 export default function BlogA({}: Props) {
   return (
-    <div className="px-4 py-8 space-y-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 ">
+    <div className="px-4 py-8 md:py-32 space-y-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 ">
       <aside className="space-y-2">
         <h2 className="text-2xl font-semibold">Newest blog posts</h2>
         <p className="max-w-xl text-gray-400 font-light text-sm">

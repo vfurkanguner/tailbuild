@@ -10,7 +10,7 @@ type Props = {};
 
 export default function FeatureD({}: Props) {
   return (
-    <div className="bg-white dark:bg-slate-900 dark:text-slate-100 text-slate-900 p-4">
+    <div className="bg-white py-8 md:py-32 dark:bg-slate-900 dark:text-slate-100 text-slate-900 px-4">
       <div className="space-y-4 flex flex-col justify-center text-center ">
         <h2 className="text-3xl font-medium">
           Support that's always there for you

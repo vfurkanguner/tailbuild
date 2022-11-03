@@ -4,7 +4,7 @@ type Props = {};
 
 export default function PricingC({}: Props) {
   return (
-    <div className="bg-white dark:bg-slate-900 dark:text-slate-100 text-slate-900 p-4">
+    <div className="bg-white py-8 md:py-32 dark:bg-slate-900 dark:text-slate-100 text-slate-900 px-4">
       <div className="">
         <div className="">
           <h2 className="text-3xl font-medium">

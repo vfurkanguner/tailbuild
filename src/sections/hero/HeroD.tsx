@@ -14,7 +14,7 @@ export default function HeroD({}: Props) {
                 Location
               </label>
               <input
-                className="w-full  py-2 px-4 bg-transparent  dark:placeholder-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500 focus:border-slate-500"
+                className="w-full py-2 px-4 bg-transparent rounded-md  dark:placeholder-slate-100 placeholder-slate-500 focus:outline-none "
                 placeholder="Location"
                 type="text"
                 name="location"
@@ -26,7 +26,7 @@ export default function HeroD({}: Props) {
                 Dates
               </label>
               <input
-                className="w-full py-2 px-4 bg-transparent  dark:placeholder-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500 focus:border-slate-500"
+                className="w-full py-2 px-4 bg-transparent  dark:placeholder-slate-100 placeholder-slate-500 focus:outline-none "
                 placeholder="Add date"
                 type="text"
                 name="date"
@@ -38,7 +38,7 @@ export default function HeroD({}: Props) {
                 Guests
               </label>
               <input
-                className="w-full py-2 px-4 bg-transparent  dark:placeholder-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-500 focus:border-slate-500"
+                className="w-full py-2 px-4 bg-transparent  dark:placeholder-slate-100 placeholder-slate-500 focus:outline-none "
                 placeholder="Guests"
                 type="text"
                 name="guests"

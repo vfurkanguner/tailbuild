@@ -4,7 +4,7 @@ type Props = {};
 
 export default function FooterC({}: Props) {
   return (
-    <footer className="bg-slate-50 pt-8 pb-4 dark:bg-slate-900">
+    <footer className="bg-slate-50 pt-16 pb-4 dark:bg-slate-900">
       <div className="grid gap-4 md:grid-cols-5  px-6 py-4 text-slate-100 font-light text-sm">
         <ul>
           <li className="text-zinc-900 dark:text-zinc-100 font-bold text-lg">
@@ -129,7 +129,7 @@ export default function FooterC({}: Props) {
               <input
                 type="email"
                 placeholder="Email"
-                className="px-4 py-2 border border-zinc-900 dark:border-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
+                className="px-4 py-2 border text-slate-900  placeholder:text-slate-900 border-zinc-900 dark:border-zinc-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400"
               />
               <button
                 type="submit"

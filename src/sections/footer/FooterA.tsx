@@ -4,7 +4,7 @@ type Props = {};
 
 export default function FooterA({}: Props) {
   return (
-    <footer className="bg-slate-50 pt-8 pb-4 dark:bg-slate-900">
+    <footer className="bg-slate-50 pt-16 pb-4 dark:bg-slate-900">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4  px-6 py-4 text-slate-100 font-light">
         <h2 className="col-span-2 md:col-span-1 inline-flex space-x-2">
           <div className="h-8 w-auto">
