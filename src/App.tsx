@@ -10,6 +10,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import MobileScreen from "./components/MobileScreen";
 import { renderToString } from "react-dom/server";
+import EmptyScreen from "./components/EmptyScreen";
 
 interface ListItem {
   id: number;
@@ -163,9 +164,8 @@ function App() {
                 <DeviceView view={view} setView={setView} />
               </aside>
 
-              <main className="border dark:border-zinc-700 overflow-y-auto ">
+              <main className="border dark:border-zinc-700 overflow-y-auto rounded-b-lg">
                 {/* {sections()["blog"]["BlogA"]} */}
-
                 <Frame
                   ref={frameRef}
                   initialContent={`
@@ -204,7 +204,11 @@ function App() {
                     </style>,
                   ]}
                 >
-                  <DraggableList list={list} ref={ref} setList={setList} />
+                  {list.length === 0 ? (
+                    <EmptyScreen />
+                  ) : (
+                    <DraggableList list={list} ref={ref} setList={setList} />
+                  )}
                 </Frame>
               </main>
             </div>
