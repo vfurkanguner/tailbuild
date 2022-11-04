@@ -11,6 +11,9 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import MobileScreen from "./components/MobileScreen";
 import { renderToString } from "react-dom/server";
 import EmptyScreen from "./components/EmptyScreen";
+import beautifyHTML from "./utils/beautifyHTML";
+import { initialHTML } from "./constants/constant";
+import MacButtonsGroup from "./components/MacButtonsGroup";
 
 interface ListItem {
   id: number;
@@ -18,6 +21,9 @@ interface ListItem {
   type: string;
 }
 function App() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const frameRef = useRef(null);
+
   const [view, setView] = useState("desktop"); // desktop, tablet, mobile
   const [list, setList] = useState<ListItem[]>([]);
   const [markup, setMarkup] = useState("");
@@ -31,43 +37,10 @@ function App() {
     setIsModalOpen(true);
   };
 
-  const ref = useRef<HTMLDivElement | null>(null);
-  const frameRef = useRef(null);
-
   const handleScrollToLastElement = () => {
     ref?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  function beautifyHTML(codeStr: any) {
-    if (!codeStr) {
-      return "";
-    }
-    const process = (str: string) => {
-      let div = document.createElement("div");
-      div.innerHTML = str.trim();
-      return format(div, 0).innerHTML.trim();
-    };
-
-    const format = (node: HTMLDivElement | any, level: number) => {
-      let indentBefore = new Array(level++ + 1).join("  "),
-        indentAfter = new Array(level - 1).join("  "),
-        textNode;
-
-      for (let i = 0; i < node.children.length; i++) {
-        textNode = document.createTextNode("\n" + indentBefore);
-        node.insertBefore(textNode, node.children[i]);
-
-        format(node.children[i], level);
-
-        if (node.lastElementChild === node.children[i]) {
-          textNode = document.createTextNode("\n" + indentAfter);
-          node.appendChild(textNode);
-        }
-      }
-      return node;
-    };
-    return process(codeStr);
-  }
   // toggle dark mode
   useEffect(() => {
     const theme = localStorage.getItem("theme") || "light";
@@ -100,37 +73,22 @@ function App() {
 
   const downloadAsHtmlFile = () => {
     const element = document.createElement("a");
-    const file = new Blob([html], { type: "text/html" });
+    const file = new Blob([initialHTML(markup)], { type: "text/html" });
     element.href = URL.createObjectURL(file);
     element.download = "index.html";
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
   };
-
-  const html = `
-  <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <!--  DON'T FORGET TO SETUP TAILWIND FROM OFFICIAL DOC -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style type="text/tailwindcss">
-          @layer base {
-            html {
-              @apply dark:bg-slate-900 bg-white;
-            }
-          }
-        </style>
-        <!--REMOVE THIS BLOCK: DON'T FORGET TO SETUP TAILWIND FROM DOC. -->
-      </head>
-      <body class="container mx-auto">
-        ${markup}
-      </body>
-    </html>
-`;
+  // toggle dark mode for iframe
+  const contentDidMount = () => {
+    const frame = frameRef.current as any;
+    const theme = localStorage.getItem("theme") || "light";
+    if (theme === "dark") {
+      frame.contentWindow.document.body.classList.add("dark");
+    } else {
+      frame.contentWindow.document.body.classList.remove("dark");
+    }
+  };
 
   return (
     <ThemeProvider>
@@ -141,7 +99,7 @@ function App() {
 
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <SyntaxHighlighter style={vs2015} language="javascript" wrapLines>
-            {html}
+            {initialHTML(markup)}
           </SyntaxHighlighter>
         </Modal>
 
@@ -161,25 +119,19 @@ function App() {
 
           <div className="md:pl-64 ">
             <div className="hidden md:flex container mx-auto px-2 lg:px-8">
-              {list.length === 0 ? (
-                <div className="w-full bg-slate-200 dark:bg-zinc-800 dark:text-zinc-400 p-4 rounded-lg text-slate-800 font-medium my-4">
-                  Hi there! 👋🏻
-                  <br />
-                  Drag and drop components from the 👈🏻 left sidebar to start
-                  building your page.⚡️
-                </div>
-              ) : null}
+              <div className="w-full bg-slate-200 dark:bg-zinc-800 dark:text-zinc-400 p-4 rounded-lg text-slate-800 font-medium my-4">
+                Hi there! 👋🏻
+                <br />
+                Drag and drop components from the 👈🏻 left sidebar to start
+                building your page.⚡️
+              </div>
             </div>
 
             <div
               className={`px-2 lg:px-8 ${view} mx-auto w-full min-h-screen container`}
             >
               <aside className="flex justify-between items-center rounded-t-lg  bg-white dark:bg-zinc-700">
-                <ul className=" py-4 px-2 w-full flex space-x-2 pl-4  ">
-                  <li className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                  <li className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                  <li className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                </ul>
+                <MacButtonsGroup />
 
                 <DeviceView view={view} setView={setView} />
               </aside>
@@ -187,6 +139,7 @@ function App() {
               <main className="border dark:border-zinc-700 overflow-y-auto rounded-b-lg">
                 <Frame
                   ref={frameRef}
+                  contentDidMount={contentDidMount}
                   initialContent={`
                   <!DOCTYPE html>
                     <html >
