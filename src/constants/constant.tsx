@@ -23,3 +23,20 @@ export const initialHTML = (markup: string) =>
     </body>
   </html>
 `;
+
+export const initialHTMLForFrame = `
+<!DOCTYPE html>
+  <html >
+    <head>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+            tailwind.config = {
+            darkMode: 'class',
+            }
+        </script>
+    </head>
+    <body>
+    <div />
+    </body>
+    </html>
+`;
