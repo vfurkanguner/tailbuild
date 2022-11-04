@@ -68,6 +68,15 @@ function App() {
     };
     return process(codeStr);
   }
+  // toggle dark mode
+  useEffect(() => {
+    const theme = localStorage.getItem("theme") || "light";
+    if (theme === "dark") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.add("light");
+    }
+  }, []);
 
   useEffect(() => {
     const div = document.createElement("div");
@@ -150,7 +159,18 @@ function App() {
             onCloseDarkMode={onCloseDarkMode}
           />
 
-          <div className="pl-64 ">
+          <div className="md:pl-64 ">
+            <div className="hidden md:flex container mx-auto px-2 lg:px-8">
+              {list.length === 0 ? (
+                <div className="w-full bg-slate-200 dark:bg-zinc-800 dark:text-zinc-400 p-4 rounded-lg text-slate-800 font-medium my-4">
+                  Hi there! 👋🏻
+                  <br />
+                  Drag and drop components from the 👈🏻 left sidebar to start
+                  building your page.⚡️
+                </div>
+              ) : null}
+            </div>
+
             <div
               className={`px-2 lg:px-8 ${view} mx-auto w-full min-h-screen container`}
             >
@@ -165,7 +185,6 @@ function App() {
               </aside>
 
               <main className="border dark:border-zinc-700 overflow-y-auto rounded-b-lg">
-                {/* {sections()["blog"]["BlogA"]} */}
                 <Frame
                   ref={frameRef}
                   initialContent={`

@@ -21,17 +21,16 @@ export default function Navbar({
   openModal,
   downLoadHtml,
 }: Props) {
-  const { activeTheme, openDark, openLight } = useTheme() as ThemeContextType;
-
+  const activeTheme = localStorage.getItem("theme") ?? "light";
   const openDarkMode = () => {
+    localStorage.setItem("theme", "dark");
     onOpenDarkMode();
-    openDark();
     document.body.classList.remove("light");
     document.body.classList.add("dark");
   };
   const closeDarkMode = () => {
+    localStorage.setItem("theme", "light");
     onCloseDarkMode();
-    openLight();
     document.body.classList.remove("dark");
     document.body.classList.add("light");
   };
