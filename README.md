@@ -2,6 +2,11 @@
 
 ✨ Go and try out: https://tailbuilder.dev/
 
+1. 36 Sections
+2. Responsive Design
+3. Dark mode (Without this feature, your app will broke 😂) 
+
+## More sections will be added soon! If you would like to add more sections I would be very happy, thanks. 
 —
 
 A web site builder is a tool that simplifies the process of creating a website by providing the user with a ready-made template, which they can then customize. Tailbuild is one such example of this type of software.
