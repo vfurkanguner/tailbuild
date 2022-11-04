@@ -123,7 +123,7 @@ export default function Sidebar({
           <div
             onMouseOver={() => setOpen(true)}
             onMouseLeave={() => setOpen(false)}
-            className="fixed p-8 bg-gray-100 transition-all left-64 w-72 dark:bg-zinc-800 bottom-0 top-0"
+            className="fixed p-4 bg-gray-100 overflow-y-auto transition-all left-64 w-72 dark:bg-zinc-800 bottom-0 top-0"
           >
             <h4 className="capitalize text-2xl font-semibold">{active}</h4>
             <div className="bg-gray-200 dark:bg-zinc-900 dark:text-zinc-400 p-4 rounded-lg text-gray-600 mt-4">
