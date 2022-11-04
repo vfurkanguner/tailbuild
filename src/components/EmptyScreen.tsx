@@ -5,7 +5,7 @@ type Props = {};
 
 export default function EmptyScreen({}: Props) {
   return (
-    <div className="w-full from-slate-900 to-indigo-900 bg-gradient-to-t  text-white py-32 px-16 flex flex-col text-center gap-4 items-center justify-center">
+    <div className="w-full from-slate-900 overflow-hidden to-indigo-900 bg-gradient-to-t  text-white py-16 px-16 flex flex-col text-center gap-4 items-center justify-center">
       <h1 className="text-3xl font-semibold leading-snug">
         This is your drop zone
         <br />
