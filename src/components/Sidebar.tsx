@@ -52,7 +52,7 @@ export default function Sidebar({
   return (
     <div className="">
       {open ? (
-        <div className="absolute inset-0  bg-black opacity-60 z-50" />
+        <div className="fixed inset-0  bg-black opacity-60 z-50" />
       ) : null}
       <div className="w-64  shadow-lg  bg-white dark:bg-zinc-800/90 border z-[98] dark:border-zinc-800 fixed  overflow-y-auto h-full py-8">
         <h2 className=" px-2 inline-flex items-center space-x-2 border-b w-full pb-4">
