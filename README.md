@@ -18,5 +18,4 @@ ent types of landing pages for SEO purposes.
 
 —
 
-Tailwindcss is an open source organization on GitHub that offers free and open-source code libraries to help developers write clean, fast and responsive CSS. One of the benefits of using Tailwind CSS is that it speeds up development because no time needs to be spent manually writing Tailwind CSS.
  
