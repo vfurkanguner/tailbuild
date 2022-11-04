@@ -114,7 +114,7 @@ export default function FooterD({}: Props) {
             </svg>
           </a>
         </div>
-        <p className="text-sm">© 2022 Taildrop. All rights reserved.</p>
+        <p className="text-sm">© 2022 Tailbuild. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -18,7 +18,7 @@ export default function CTAE({}: Props) {
         <div className="flex items-center gap-4 text-sm font-light text-slate-600">
           01
           <span className="w-16 h-px bg-black dark:bg-slate-500" />
-          What is Taildrop?
+          What is Tailbuild?
         </div>
         <h1 className="md:text-5xl text-4xl font-semibold leading-tight">
           Start your business

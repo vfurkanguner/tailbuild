@@ -49,7 +49,7 @@ export default function MobileScreen({}: Props) {
             </svg>
           </div>
           <span className="text-zinc-900 dark:text-zinc-100 font-bold text-4xl">
-            Taildrop
+            Tailbuild
           </span>
         </h2>
         <div className="mt-32 space-y-8">
@@ -58,7 +58,7 @@ export default function MobileScreen({}: Props) {
           </h4>
 
           <p className="text-lg text-slate-600">
-            To use Taildrop, you need to open it on a desktop or laptop
+            To use Tailbuild, you need to open it on a desktop or laptop
             computer.
           </p>
         </div>

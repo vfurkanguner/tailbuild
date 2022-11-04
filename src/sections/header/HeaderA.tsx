@@ -48,7 +48,7 @@ export default function HeaderA({}: Props) {
           </svg>
         </div>
         <span className="hidden md:block text-slate-900 dark:text-slate-100 font-bold text-2xl">
-          Taildrop
+          Tailbuild
         </span>
       </div>
 

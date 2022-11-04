@@ -97,7 +97,7 @@ export default function Sidebar({
             </svg>
           </div>
           <span className="text-zinc-900 dark:text-zinc-100 font-bold text-2xl">
-            Taildrop
+            Tailbuild
           </span>
         </h2>
 
@@ -125,8 +125,13 @@ export default function Sidebar({
             onMouseLeave={() => setOpen(false)}
             className="fixed p-8 bg-gray-100 transition-all left-64 w-72 dark:bg-zinc-800 bottom-0 top-0"
           >
-            <h4 className="capitalize">{active}</h4>
-            <div className="space-y-6 mt-4">
+            <h4 className="capitalize text-2xl font-semibold">{active}</h4>
+            <div className="bg-gray-200 dark:bg-zinc-900 dark:text-zinc-400 p-4 rounded-lg text-gray-600 mt-4">
+              <span className="font-medium text-sm ">
+                Select a {active} 👇 component to add to the canvas 👉
+              </span>
+            </div>
+            <div className="space-y-6 mt-6">
               {Object.entries(ActiveIconList).map(([name, component]) => {
                 const block: object = getSections()[active as keyof {}][name];
 

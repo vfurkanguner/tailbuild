@@ -48,7 +48,7 @@ export default function FooterA({}: Props) {
             </svg>
           </div>
           <span className="text-zinc-900 dark:text-zinc-100 font-bold text-2xl">
-            Taildrop
+            Tailbuild
           </span>
         </h2>
 
@@ -168,7 +168,7 @@ export default function FooterA({}: Props) {
       <aside className="border-t dark:border-slate-600 ">
         <div>
           <div className="flex  items-center justify-between px-6 py-4 space-y-2 text-zinc-900 dark:text-zinc-100">
-            <p className="text-sm">© 2022 Taildrop. All rights reserved.</p>
+            <p className="text-sm">© 2022 Tailbuild. All rights reserved.</p>
 
             <div className="flex space-x-4">
               <a
