@@ -90,8 +90,6 @@ function App() {
     }
   };
 
-  
-
   return (
     <ThemeProvider>
       <div className="bg-gray-100 dark:bg-zinc-900 transition-all dark:text-zinc-50 text-zinc-900 min-h-screen pb-16">
