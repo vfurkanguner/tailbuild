@@ -1,6 +1,6 @@
 # Tailbuilder 
 
-✨ Go and try out: https://tailbuilder.dev/
+✨ Go and try out: https://tailbuild.dev/
 
 1. 36 Sections
 2. Responsive Design
