@@ -20,3 +20,9 @@ ent types of landing pages for SEO purposes.
 —
 
  
+Thanks to 
+
+I was inspired by this library when developing the idea, it is a library you should definitely check out. Special thanks to @mertJF .
+
+🔥 https://github.com/mertJF/tailblocks
+
