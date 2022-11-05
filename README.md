@@ -1,4 +1,4 @@
-# Tailbuilder 
+# Tailbuild 
 
 ✨ Go and try out: https://tailbuild.dev/
 
