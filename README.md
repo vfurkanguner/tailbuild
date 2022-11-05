@@ -1,12 +1,13 @@
-# Tailbuilder 
+# Tailbuild 
 
-✨ Go and try out: https://tailbuilder.dev/
+✨ Go and try out: https://tailbuild.dev/
 
 1. 36 Sections
 2. Responsive Design
 3. Dark mode (Without this feature, your app will broke 😂) 
 
-<img width="1412" alt="Screen Shot 2022-11-05 at 02 09 55" src="https://user-images.githubusercontent.com/67821678/200088596-4c8712ba-3ea6-4682-ab6c-4b19aceda75a.png">
+<img width="1432" alt="Screen Shot 2022-11-05 at 03 03 44" src="https://user-images.githubusercontent.com/67821678/200091239-c36c2ea9-2d89-4c03-8f8e-2b0a8b0ef9ae.png">
+
 
 ## More sections will be added soon! If you would like to add more sections I would be very happy, thanks. 
 —
