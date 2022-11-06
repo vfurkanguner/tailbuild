@@ -1,6 +1,3 @@
-import React from "react";
-import { ThemeContextType } from "../@types/theme";
-import { useTheme } from "../contexts/ThemeContext";
 import classNames from "../utils/classNames";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { CodeBracketIcon } from "@heroicons/react/20/solid";

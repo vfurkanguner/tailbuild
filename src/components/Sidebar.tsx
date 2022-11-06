@@ -1,7 +1,7 @@
 import React from "react";
 import getPlaceholders from "../placeholders";
 import getSections from "../sections";
-import StyledAccordion from "./StyledAccordion";
+import Box from "./Box";
 
 type Props = {
   list: object[];
@@ -52,10 +52,10 @@ export default function Sidebar({
 
   return (
     <div className="">
-      {open ? (
+      {/* {open ? (
         <div className="fixed inset-0  bg-black opacity-60 z-50" />
-      ) : null}
-      <div className="w-64  shadow-lg  bg-white dark:bg-zinc-800/90 border z-[98] dark:border-zinc-800 fixed  overflow-y-auto h-full py-8">
+      ) : null} */}
+      <div className="w-64  shadow-lg  bg-white dark:bg-zinc-800/90 border z-[98] dark:border-zinc-800 fixed top-0 bottom-0  overflow-y-auto h-full py-8">
         <h2 className=" px-2 inline-flex items-center space-x-2 border-b w-full pb-4">
           <div className="h-8 w-auto">
             <svg
@@ -106,7 +106,10 @@ export default function Sidebar({
         <h3 className="mt-8 font-semibold px-4 dark:text-zinc-400 ">
           Components
         </h3>
-        <ul className="mt-2 space-y-4 px-2  dark:text-zinc-200 capitalize cursor-pointer">
+        <ul
+          className="mt-2 space-y-4 px-2  dark:text-zinc-200 capitalize cursor-pointer"
+          onMouseLeave={() => setOpen(false)}
+        >
           {Object.entries(iconList).map(([type, icons]) => {
             return (
               <li
@@ -142,14 +145,15 @@ export default function Sidebar({
                   ...block,
                 };
                 return (
-                  <button
-                    draggable
-                    onDragEnd={() => onDragEnd(newBlock)}
-                    className="w-full h-full bg-gray-200 dark:bg-slate-900 rounded-md px-2  py-2 hover:cursor-grab grayscale hover:grayscale-0"
+                  <Box
                     key={name}
+                    name={name}
+                    onDragEnd={() => onDragEnd(newBlock)}
                   >
-                    {component}
-                  </button>
+                    <button className="w-full h-full bg-gray-200 dark:bg-slate-900 rounded-md px-2  py-2 hover:cursor-grab grayscale hover:grayscale-0">
+                      {component}
+                    </button>
+                  </Box>
                 );
               })}
             </div>
@@ -159,5 +163,3 @@ export default function Sidebar({
     </div>
   );
 }
-
-// iconList[active]

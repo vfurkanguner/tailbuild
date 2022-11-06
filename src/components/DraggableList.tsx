@@ -1,92 +1,81 @@
 import React, { ForwardedRef } from "react";
 import { TrashIcon } from "@heroicons/react/24/solid";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import classNames from "../utils/classNames";
+import Dustbin from "./Dustbin";
+import update from "immutability-helper";
+import { ListItem as ListItemInterface } from "../App";
+import Card from "./Card";
+import EmptyScreen from "./EmptyScreen";
 
 type Props = {
   list: any[];
   setList: (list: any[]) => void;
 };
 
+function DragLayer({ children }: { children: React.ReactNode }) {
+  return <div>selam</div>;
+}
+
 const DraggableList = React.forwardRef(
   ({ list, setList }: Props, ref: ForwardedRef<HTMLDivElement>) => {
-    const onDragEnd = (result: any) => {
-      const { destination, source } = result;
-      if (!result.destination) {
-        return;
-      }
+    const [isDragging, setIsDragging] = React.useState(false);
 
-      const items = Array.from(list);
-      const [reorderedItem] = items.splice(source.index, 1);
-      items.splice(destination.index, 0, reorderedItem);
+    const moveCard = React.useCallback(
+      (dragIndex: number, hoverIndex: number) => {
+        setList((prevCards: ListItemInterface[]) =>
+          update(prevCards, {
+            $splice: [
+              [dragIndex, 1],
+              [hoverIndex, 0, prevCards[dragIndex] as Item],
+            ],
+          })
+        );
+      },
+      []
+    );
 
-      setList(items);
-    };
+    // remove from list using update
+    const removeCard = React.useCallback((index: number) => {
+      setList((prevCards: ListItemInterface[]) =>
+        update(prevCards, {
+          $splice: [[index, 1]],
+        })
+      );
+    }, []);
 
-    const onDelete = (index: number) => {
-      const items = Array.from(list);
-      items.splice(index, 1);
-      setList(items);
-    };
+    const renderCard = React.useCallback((component: any, index: number) => {
+      return (
+        <div className="relative group">
+          <Card
+            key={component.id}
+            index={index}
+            id={component.id}
+            moveCard={moveCard}
+          >
+            {component}
+          </Card>
+          <button
+            className={classNames(
+              "hidden group-hover:flex items-center justify-center w-10 h-10",
+              " bg-red-600 rounded-full absolute z-50 top-4 right-5",
+              "  text-white cursor-pointer"
+            )}
+            onClick={() => removeCard(index)}
+          >
+            <TrashIcon className="w-5 h-5" />
+          </button>
+        </div>
+      );
+    }, []);
 
     return (
-      <div className="w-full h-screen">
-        <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="list">
-            {(provided) => (
-              <div
-                className="hover:cursor-grab  bg-white dark:bg-slate-900"
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-              >
-                {list?.map((component, index) => {
-                  return (
-                    <Draggable
-                      index={index}
-                      draggableId={component.id}
-                      key={component.id}
-                    >
-                      {(provided, snapshot: any) => (
-                        <div className="">
-                          <div
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                          >
-                            <div className="relative group">
-                              <div
-                                ref={ref}
-                                className={classNames(
-                                  snapshot.isDragging
-                                    ? "opacity-50   border-2 border-green-600"
-                                    : "opacity-100 ",
-                                  "hover:border-4 border-green-600"
-                                )}
-                              >
-                                {component}
-                              </div>
-                              <button
-                                className={classNames(
-                                  "hidden group-hover:flex items-center justify-center w-10 h-10",
-                                  " bg-red-600 rounded-full absolute z-50 top-4 right-5",
-                                  "  text-white cursor-pointer"
-                                )}
-                                onClick={() => onDelete(index)}
-                              >
-                                <TrashIcon className="w-5 h-5" />
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </Draggable>
-                  );
-                })}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
+      <div className="h-screen">
+        <Dustbin>
+          {list.length === 0 ? <EmptyScreen /> : null}
+          {list.length > 0
+            ? list?.map((component, i) => renderCard(component, i))
+            : null}
+        </Dustbin>
       </div>
     );
   }

@@ -1,11 +1,9 @@
-import React from "react";
-import Logo from "./Logo";
 
 type Props = {};
 
 export default function MobileScreen({}: Props) {
   return (
-    <div className="bg-blue-50 h-full text-center">
+    <div className="bg-blue-50 dark:bg-zinc-900 h-full text-center">
       <div className="py-8 flex  flex-col px-4  items-center">
         <h2 className="inline-flex items-center space-x-2">
           <div className="h-16 w-auto">

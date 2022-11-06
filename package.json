@@ -11,8 +11,10 @@
   "dependencies": {
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
+    "immutability-helper": "^3.1.1",
     "react": "^18.2.0",
-    "react-beautiful-dnd": "^11.0.5",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-frame-component": "^5.2.3",
     "react-syntax-highlighter": "^15.5.0"
