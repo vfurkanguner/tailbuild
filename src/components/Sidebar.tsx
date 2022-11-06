@@ -33,6 +33,7 @@ export default function Sidebar({
   const onDragEnd = (block: Block) => {
     setList([...list, block]);
     handleScrollToLastElement();
+    setOpen(false);
   };
 
   const onMouseEnter = (title: string) => {
